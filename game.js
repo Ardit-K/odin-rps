@@ -1,3 +1,5 @@
+//Author: Ardit Koti
+
 const getComputerChoice = () => {
     let result = Math.round(Math.random() * 10) % 3;
     if (result === 0) return "Rock";
@@ -46,8 +48,18 @@ const playRound = (humanChoice, computerChoice) => {
     }
 }
 
-const compRes = getComputerChoice();
-const humanRes = getHumanChoice();
-console.log(`Computer Choice: ${compRes}`);
-console.log(`Human Choice: ${humanRes}`);
-playRound(humanRes, compRes);
+const playGame = (rounds) => {
+    for(let i =0;  i < rounds; i++){
+        const compRes = getComputerChoice();
+        const humanRes = getHumanChoice();
+        console.log(`Computer Choice: ${compRes}`);
+        console.log(`Human Choice: ${humanRes}`);
+        playRound(humanRes, compRes); 
+    }
+    console.log(`Your Score: ${humanScore}`);
+    console.log(`Computer Score: ${computerScore}`);  
+}
+
+playGame(5);
+
+
