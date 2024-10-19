@@ -5,5 +5,16 @@ const getComputerChoice = () => {
     else return "Scissors";
 }
 
-const res = getComputerChoice();
-console.log(`Computer Choice: ${res}`);
+const getHumanChoice = () => {
+    let res = prompt("Enter either Rock, Paper, or Scissors: ");
+    if (res !== "Rock" && res !== "Paper" && res !== "Scissors"){
+        console.log("Invalid Input: Try again...");
+        return getHumanChoice();
+    }
+    return res;
+}
+
+const compRes = getComputerChoice();
+const humanRes = getHumanChoice();
+console.log(`Computer Choice: ${compRes}`);
+console.log(`Human Choice: ${humanRes}`);
