@@ -60,6 +60,3 @@ const playGame = (rounds) => {
     console.log(`Computer Score: ${computerScore}`);  
 }
 
-playGame(5);
-
-
